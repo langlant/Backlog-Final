@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> <%= title %> </title>
+    </head>
+    <body>
+        <%- include('header2.ejs') %>
+        <h1>Welcome <%= user_id %>!</h1>
+        <h3>Here is your backlog:</h3>
+        <ul>
+
+            <% for (var i=0; i<data.length; i++){ %> <!--trying to pull user data and all titles they put in. length is just a placeholder-->
+                <li> <%= data[i].title %></li>
+                <ul>
+                    <li><%= "Genre: " + data[i].genre %></li>
+                    <li><%= "Media Type: " + data[i].media %></li>
+                    <li><%= "Status: " + data[i].bstatus %></li>
+                    <li><%= "Description: " + data[i].description %></li>
+                </ul>    
+            <% } %>
+        </ul>
+
+        <%- include('footer.ejs') %>
+
+    </body>
+</html>

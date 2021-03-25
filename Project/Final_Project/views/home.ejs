@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> <%= title %> </title>
+        
+    </head>
+    <body>
+        <%- include('header2.ejs') %>
+        <h1>Welcome <%= user_id %>!</h1>
+        <form name="form" method= "POST">
+            <p>
+                Title:
+            </p>
+            <p>
+                <input type="text" name="title" placeholder="Please enter the title">
+                <input type = "submit" value = "Search" formaction="/search">
+            </p>
+            <p>
+                Genre:
+            </p>
+
+            <p>
+                <input type="text" name="genre" placeholder="Enter genre (i.e. horror, action)">
+            </p>
+            <p>
+                <label for="media">Media Type</label>
+                <select name="media" id="media">
+                    <option value="movie">Movie</option>
+                    <option value="tv">TV</option>
+                    <option value="book">Book</option>
+                    <option value="videogame">Video Game</option>
+                    <option value="podcast">Podcast</option>
+                    <option value="comic">Comic</option>
+                    <option value="audiobook">Audio Book</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+            <p>
+                Description:
+            </p>
+            <p>
+                <textarea name = "description" placeholder="Please enter a brief description"></textarea>
+            </p>
+            <p>
+                <label for="bstatus">Choose a status</label>
+                <select name="bstatus" id="status">
+                    <option value="inprogress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="backlog">Backlog</option>
+                </select>
+            </p>
+            <p>
+                <ul>
+                    <li>In Progress: Currently watching or in the middle of</li>
+                    <li>Complete: Finally watched/listened/Read/Played</li>
+                    <li>Backlog: Saving for later, hopefully will engage with at a later date.</li>
+                </ul>
+            </p>
+            <p>
+                <input type = "submit" value="Create" formaction ='/create'>
+                <input type = "submit" value="Read" formaction ='/read'>
+                <input type = "submit" value="Update" formaction ='/update'>
+                <input type = "submit" value="Delete" formaction ='/delete'>
+            </p>
+        </form>
+        <%- include('footer.ejs') %>
+
+    </body>
+</html>
+
+<!--The homepage should display user name and backlog listed below-->

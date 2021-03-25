@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%= title  %>
+        </title>
+    </head>
+    <body>
+        <%- include('header.ejs') %>
+        <h1>Welcome to Backlog!</h1>
+        <p>Please enter your User ID</p>
+        <form action="http://localhost:3000/home" method= "POST">
+        <p>
+          User ID:
+          <input type = "text" name = "user_id" placeholder="User ID">
+        </p>
+        <p>
+          <input type = "submit" value = "Submit">
+        </p>
+      </form>
+        <%- include('footer.ejs') %>
+    </body>
+
+</html>
