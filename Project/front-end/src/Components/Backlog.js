@@ -6,15 +6,17 @@ function Backlog(){
 
     const renderBacklog = (data) => {
         for (var i=0; i<data.length; i++){
-            <view>
-                <li>data[i].title</li>
-                <ul>
-                    <li>"Genre: " + data[i].genre</li>
-                    <li>"Media Type: " + data[i].media</li>
-                    <li>"Status: " + data[i].bstatus</li>
-                    <li>"Description: " + data[i].description </li>
-                </ul>   
-            </view> 
+            <div>
+                <view>
+                    <li>data[i].title</li>
+                    <ul>
+                        <li>"Genre: " + data[i].genre</li>
+                        <li>"Media Type: " + data[i].media</li>
+                        <li>"Status: " + data[i].bstatus</li>
+                        <li>"Description: " + data[i].description </li>
+                    </ul>   
+                </view>
+            </div> 
         }
     }
     return(
@@ -25,7 +27,7 @@ function Backlog(){
             <h1>Welcome USER_ID!</h1>
             <h3>Here is your backlog:</h3>
             <view>
-               DATA GOES HERE
+                {renderBacklog()}
             </view> 
             <p>Posted by: Anthony Langley</p>
     <p>Contact Information: <a href="mailto:langlant@mail.gvsu.edu">

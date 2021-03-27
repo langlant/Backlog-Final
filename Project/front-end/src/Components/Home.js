@@ -10,7 +10,7 @@ function Home(props){
     const [Genre,setGenre] = useState('')
     const [Bstatus,setBstatus]= useState('')
     const [Message, setMessage] = useState('')    
-
+    
     const axios_function = (url) =>{
         const variables = {
             title:Title,
@@ -51,7 +51,7 @@ function Home(props){
             <Link to = "/" style={{ marginRight: 10 }}>Login</Link>
             <Link to = "/home" style={{ marginRight: 10 }}>Home</Link>
             <Link to = "/backlog" style={{ marginRight: 10 }}>Backlog</Link>
-            <h1>Welcome USER_ID!</h1> {/*Need to figure out how to pass on user_id*/}
+            <h1>Welcome!</h1> {/*Need to figure out how to pass on user_id*/}
             <p>
                 Title:
             </p>
@@ -76,7 +76,10 @@ function Home(props){
 
             <p>
                 <label for="media">Media Type</label>
-                    <select name="media" id="media">
+                    <select name="media" id="media" value = {Media}
+                        onChange = {function (e){
+                            setMedia(e.target.value)
+                        }}>
                         <option value="movie">Movie</option>
                         <option value="tv">TV</option>
                         <option value="book">Book</option>
@@ -97,12 +100,18 @@ function Home(props){
                 }}></textarea>
             </p>
             <p>
-                <label for="bstatus">Choose a status</label>
-                <select name="bstatus" id="status">
-                    <option value="inprogress">In Progress</option>
-                    <option value="completed">Completed</option>
-                    <option value="backlog">Backlog</option>
-                </select>
+                Status:
+                <input type = "text" name = "bstatus" value = {Bstatus} 
+                    onChange = {function (e){
+                        setBstatus(e.target.value)
+                    }}></input>            
+            </p>
+            <p>
+                <ul>
+                    <li>In Progress: Currently watching or in the middle of</li>
+                    <li>Complete: Finally watched/listened/Read/Played</li>
+                    <li>Backlog: Saving for later, hopefully will engage with at a later date.</li>
+                </ul>
             </p>
             <p>
                 <button onClick ={onCreate}>Create</button>

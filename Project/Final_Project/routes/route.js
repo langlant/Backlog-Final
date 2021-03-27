@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/home', function(req,res){
-  user_id = req.session.user_id
+  user_id = req.body.user_id
   res.render('home', {title:"Homepage", user_id: req.session.user_id})
 })
 

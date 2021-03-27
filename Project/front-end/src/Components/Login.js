@@ -40,13 +40,16 @@ function Login(props){
             </p>
             <p>
             <button onClick ={onSubmit}>Submit</button>
-
             </p>
+
+
             <p>Posted by: Anthony Langley</p>
         <p>Contact Information: <a href="mailto:langlant@mail.gvsu.edu">
             langlant@mail.gvsu
         </a></p>
-
+        <p>
+            {Message}
+        </p>
         </div>
 
     )
